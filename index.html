@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md. Jawadur Rafid | Connect</title>
+  <meta name="description" content="Connect with Md. Jawadur Rafid across the web. Access portfolio, CV, LinkedIn, GitHub, and social profiles.">
+  
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:title" content="Md. Jawadur Rafid | Connect">
+  <meta property="og:description" content="Connect with Md. Jawadur Rafid across the web. Access portfolio, CV, LinkedIn, GitHub, and social profiles.">
+  <meta property="og:image" content="https://connect.jawadurrafid.com/profile.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://connect.jawadurrafid.com">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="profile.png">
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #070709;
+      --card-bg: rgba(255, 255, 255, 0.035);
+      --card-border: rgba(255, 255, 255, 0.07);
+      --card-border-hover: rgba(255, 255, 255, 0.15);
+      --card-bg-hover: rgba(255, 255, 255, 0.055);
+      --text-primary: #F5F5F7;
+      --text-secondary: #86868B;
+      --accent-color: #FFFFFF;
+      --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 56px 20px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Elegant, ambient colored backdrop glow (Linear/Apple inspired) */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(14, 165, 233, 0.07) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 80% 15%, rgba(236, 72, 153, 0.03) 0%, transparent 35%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: auto 0;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Hero / Header Section */
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .profile-photo-container {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .profile-photo {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+      transition: var(--transition);
+      background-color: #121214;
+    }
+
+    .profile-photo:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: scale(1.02);
+    }
+
+    .name {
+      font-size: 1.55rem;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 0.92rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      letter-spacing: -0.01em;
+    }
+
+    /* Links List Section */
+    main {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: var(--transition);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Interactive spotlight hover layer */
+    .link-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      background: radial-gradient(circle 100px at var(--x, 0px) var(--y, 0px), rgba(255, 255, 255, 0.04), transparent 80%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .link-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Staggered card animations */
+    .link-card:nth-child(1) { animation-delay: 0.04s; }
+    .link-card:nth-child(2) { animation-delay: 0.08s; }
+    .link-card:nth-child(3) { animation-delay: 0.12s; }
+    .link-card:nth-child(4) { animation-delay: 0.16s; }
+    .link-card:nth-child(5) { animation-delay: 0.20s; }
+    .link-card:nth-child(6) { animation-delay: 0.24s; }
+    .link-card:nth-child(7) { animation-delay: 0.28s; }
+    .link-card:nth-child(8) { animation-delay: 0.32s; }
+
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 1;
+    }
+
+    .link-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+
+    .link-icon svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .link-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      color: var(--text-primary);
+      transition: var(--transition);
+    }
+
+    .chevron-icon {
+      width: 14px;
+      height: 14px;
+      color: var(--text-secondary);
+      opacity: 0.3;
+      transform: translateX(0);
+      transition: var(--transition);
+      z-index: 1;
+    }
+
+    /* Card Hover States */
+    .link-card:hover {
+      background-color: var(--card-bg-hover);
+      border-color: var(--card-border-hover);
+      transform: translateY(-2px);
+      box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.3),
+        0 0 1px rgba(255, 255, 255, 0.1) inset;
+    }
+
+    .link-card:hover .link-icon {
+      color: var(--text-primary);
+      transform: scale(1.05);
+    }
+
+    .link-card:hover .chevron-icon {
+      opacity: 0.8;
+      transform: translateX(3px);
+      color: var(--text-primary);
+    }
+
+    .link-card:active {
+      transform: translateY(0);
+      background-color: rgba(255, 255, 255, 0.03);
+      box-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.2),
+        0 0 1px rgba(255, 255, 255, 0.05) inset;
+    }
+
+    /* Brand-specific hover effects for separability and mixed colors */
+    .link-card.card-website:hover {
+      border-color: rgba(0, 122, 255, 0.35);
+      background-color: rgba(0, 122, 255, 0.025);
+      box-shadow: 0 6px 20px rgba(0, 122, 255, 0.1), 0 0 1px rgba(0, 122, 255, 0.2) inset;
+    }
+    .link-card.card-website:hover .link-icon {
+      color: #007AFF;
+    }
+
+    .link-card.card-linkedin:hover {
+      border-color: rgba(10, 102, 194, 0.35);
+      background-color: rgba(10, 102, 194, 0.025);
+      box-shadow: 0 6px 20px rgba(10, 102, 194, 0.1), 0 0 1px rgba(10, 102, 194, 0.2) inset;
+    }
+    .link-card.card-linkedin:hover .link-icon {
+      color: #0A66C2;
+    }
+
+    .link-card.card-github:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      background-color: rgba(255, 255, 255, 0.03);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.08), 0 0 1px rgba(255, 255, 255, 0.15) inset;
+    }
+    .link-card.card-github:hover .link-icon {
+      color: #FFFFFF;
+    }
+
+    .link-card.card-email:hover {
+      border-color: rgba(234, 67, 53, 0.35);
+      background-color: rgba(234, 67, 53, 0.025);
+      box-shadow: 0 6px 20px rgba(234, 67, 53, 0.1), 0 0 1px rgba(234, 67, 53, 0.2) inset;
+    }
+    .link-card.card-email:hover .link-icon {
+      color: #EA4335;
+    }
+
+    .link-card.card-whatsapp:hover {
+      border-color: rgba(37, 211, 102, 0.35);
+      background-color: rgba(37, 211, 102, 0.025);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.1), 0 0 1px rgba(37, 211, 102, 0.2) inset;
+    }
+    .link-card.card-whatsapp:hover .link-icon {
+      color: #25D366;
+    }
+
+    .link-card.card-facebook:hover {
+      border-color: rgba(24, 119, 242, 0.35);
+      background-color: rgba(24, 119, 242, 0.025);
+      box-shadow: 0 6px 20px rgba(24, 119, 242, 0.1), 0 0 1px rgba(24, 119, 242, 0.2) inset;
+    }
+    .link-card.card-facebook:hover .link-icon {
+      color: #1877F2;
+    }
+
+    .link-card.card-instagram:hover {
+      border-color: rgba(225, 48, 108, 0.35);
+      background-color: rgba(225, 48, 108, 0.025);
+      box-shadow: 0 6px 20px rgba(225, 48, 108, 0.1), 0 0 1px rgba(225, 48, 108, 0.2) inset;
+    }
+    .link-card.card-instagram:hover .link-icon {
+      color: #E1306C;
+    }
+
+    .link-card.card-x:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      background-color: rgba(255, 255, 255, 0.03);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.08), 0 0 1px rgba(255, 255, 255, 0.15) inset;
+    }
+    .link-card.card-x:hover .link-icon {
+      color: #FFFFFF;
+    }
+
+    /* Footer Section */
+    footer {
+      text-align: center;
+      padding: 8px 0;
+      opacity: 0;
+      animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation-delay: 0.48s;
+      z-index: 1;
+    }
+
+    .footer-text {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      user-select: none;
+    }
+
+    /* Mobile Responsive Settings */
+    @media (max-width: 480px) {
+      body {
+        padding: 40px 16px;
+      }
+      header {
+        margin-bottom: 30px;
+      }
+      .profile-photo {
+        width: 88px;
+        height: 88px;
+        margin-bottom: 16px;
+      }
+      .name {
+        font-size: 1.38rem;
+      }
+      .subtitle {
+        font-size: 0.88rem;
+      }
+      .link-card {
+        padding: 14px 18px;
+        border-radius: 14px;
+      }
+      .link-left {
+        gap: 14px;
+      }
+      .link-title {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Hero / Profile -->
+    <header>
+      <div class="profile-photo-container">
+        <img src="profile.png" alt="Md. Jawadur Rafid" class="profile-photo">
+      </div>
+      <h1 class="name">Md. Jawadur Rafid</h1>
+      <p class="subtitle">Connect with me across the web.</p>
+    </header>
+
+    <!-- Links Section -->
+    <main>
+      <!-- Website Link -->
+      <a href="https://jawadurrafid.com" id="link-website" class="link-card card-website" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <span class="link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+              <path d="M2 12h20"></path>
+            </svg>
+          </span>
+          <span class="link-title">Website</span>
+        </div>
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+
+      <!-- LinkedIn Link -->
+      <a href="https://linkedin.com/in/jawadurrafid/" id="link-linkedin" class="link-card card-linkedin" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <span class="link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </span>
+          <span class="link-title">LinkedIn</span>
+        </div>
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+
+      <!-- GitHub Link -->
+      <a href="https://github.com/jawadur13" id="link-github" class="link-card card-github" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <span class="link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+          </span>
+          <span class="link-title">GitHub</span>
+        </div>
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+
+      <!-- Email Link -->
+      <a href="mailto:contact@jawadurrafid.com" id="link-email" class="link-card card-email" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <span class="link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M1.5 3.5c-.77 0-1.4.58-1.48 1.33L12 14.21l11.98-9.38c-.08-.75-.71-1.33-1.48-1.33zm22.5 3.32L12.4 16.02c-.24.19-.56.19-.8 0L0 6.82V18.5c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2z"/>
+            </svg>
+          </span>
+          <span class="link-title">Email</span>
+        </div>
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+
+      <!-- WhatsApp Link -->
+      <a href="https://wa.me/8801824844522" id="link-whatsapp" class="link-card card-whatsapp" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <span class="link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.753-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.625 1.451 5.403.002 9.803-4.394 9.806-9.805.001-2.621-1.013-5.085-2.86-6.933-1.847-1.848-4.316-2.86-6.937-2.861-5.409 0-9.81 4.4-9.814 9.813-.002 1.706.467 3.376 1.357 4.912L1.879 20.83l4.768-1.251-.218-.325zm12.355-6.602c-.3-.149-1.764-.87-2.034-.968-.27-.099-.467-.149-.662.15-.195.297-.756.968-.927 1.162-.17.196-.341.22-.641.071-.3-.149-1.265-.467-2.41-1.487-.89-.794-1.49-1.775-1.665-2.072-.175-.297-.019-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.662-1.597-.907-2.185-.238-.573-.48-.495-.662-.505-.17-.008-.364-.01-.56-.01-.195 0-.514.074-.783.37-.27.297-1.03 1.007-1.03 2.457 0 1.45 1.054 2.85 1.201 3.048.147.197 2.074 3.167 5.024 4.44.702.303 1.25.485 1.68.621.705.224 1.346.193 1.854.117.566-.084 1.764-.72 2.012-1.417.248-.696.248-1.293.173-1.417-.074-.124-.27-.197-.57-.347z"/>
+            </svg>
+          </span>
+          <span class="link-title">WhatsApp</span>
+        </div>
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+
+      <!-- Facebook Link -->
+      <a href="https://www.facebook.com/jawadur.rafid" id="link-facebook" class="link-card card-facebook" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <span class="link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </span>
+          <span class="link-title">Facebook</span>
+        </div>
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+
+      <!-- Instagram Link -->
+      <a href="https://www.instagram.com/jawadur_rafid/" id="link-instagram" class="link-card card-instagram" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <span class="link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+            </svg>
+          </span>
+          <span class="link-title">Instagram</span>
+        </div>
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+
+      <!-- X / Twitter Link -->
+      <a href="https://x.com/jawadur_rafid" id="link-x" class="link-card" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <span class="link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </span>
+          <span class="link-title">X / Twitter</span>
+        </div>
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-text">connect.jawadurrafid.com</div>
+    </footer>
+  </div>
+
+  <script>
+    // Spotlight effect that tracks the mouse movement over the cards
+    document.querySelectorAll('.link-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--x', `${x}px`);
+        card.style.setProperty('--y', `${y}px`);
+      });
+    });
+  </script>
+</body>
+</html>
