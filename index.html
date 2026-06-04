@@ -195,6 +195,10 @@
     .link-card:nth-child(6) { animation-delay: 0.24s; }
     .link-card:nth-child(7) { animation-delay: 0.28s; }
     .link-card:nth-child(8) { animation-delay: 0.32s; }
+    .link-card:nth-child(9) { animation-delay: 0.36s; }
+    .link-card:nth-child(10) { animation-delay: 0.40s; }
+    .link-card:nth-child(11) { animation-delay: 0.44s; }
+    .link-card:nth-child(12) { animation-delay: 0.48s; }
 
     .link-left {
       display: flex;
@@ -339,13 +343,31 @@
       color: #FFFFFF;
     }
 
+    .link-card.card-threads:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      background-color: rgba(255, 255, 255, 0.03);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.08), 0 0 1px rgba(255, 255, 255, 0.15) inset;
+    }
+    .link-card.card-threads:hover .link-icon {
+      color: #FFFFFF;
+    }
+
+    .link-card.card-telegram:hover {
+      border-color: rgba(38, 165, 228, 0.35);
+      background-color: rgba(38, 165, 228, 0.025);
+      box-shadow: 0 6px 20px rgba(38, 165, 228, 0.1), 0 0 1px rgba(38, 165, 228, 0.2) inset;
+    }
+    .link-card.card-telegram:hover .link-icon {
+      color: #26A5E4;
+    }
+
     /* Footer Section */
     footer {
       text-align: center;
       padding: 8px 0;
       opacity: 0;
       animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      animation-delay: 0.48s;
+      animation-delay: 0.56s;
       z-index: 1;
     }
 
@@ -452,15 +474,45 @@
         </svg>
       </a>
 
-      <!-- Email Link -->
-      <a href="mailto:contact@jawadurrafid.com" id="link-email" class="link-card card-email" target="_blank" rel="noopener noreferrer">
+      <!-- Business Email Link -->
+      <a href="mailto:contact@jawadurrafid.com" id="link-email-business" class="link-card card-email" target="_blank" rel="noopener noreferrer">
         <div class="link-left">
           <span class="link-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M1.5 3.5c-.77 0-1.4.58-1.48 1.33L12 14.21l11.98-9.38c-.08-.75-.71-1.33-1.48-1.33zm22.5 3.32L12.4 16.02c-.24.19-.56.19-.8 0L0 6.82V18.5c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2z"/>
             </svg>
           </span>
-          <span class="link-title">Email</span>
+          <span class="link-title">Business Email</span>
+        </div>
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+
+      <!-- Personal Email Link -->
+      <a href="mailto:jawadurrafidrafid@gmail.com" id="link-email-personal" class="link-card card-email" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <span class="link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M1.5 3.5c-.77 0-1.4.58-1.48 1.33L12 14.21l11.98-9.38c-.08-.75-.71-1.33-1.48-1.33zm22.5 3.32L12.4 16.02c-.24.19-.56.19-.8 0L0 6.82V18.5c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2z"/>
+            </svg>
+          </span>
+          <span class="link-title">Personal Email</span>
+        </div>
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+
+      <!-- Backup Email Link -->
+      <a href="mailto:rafidjawadur@gmail.com" id="link-email-backup" class="link-card card-email" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <span class="link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M1.5 3.5c-.77 0-1.4.58-1.48 1.33L12 14.21l11.98-9.38c-.08-.75-.71-1.33-1.48-1.33zm22.5 3.32L12.4 16.02c-.24.19-.56.19-.8 0L0 6.82V18.5c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2z"/>
+            </svg>
+          </span>
+          <span class="link-title">Backup Email</span>
         </div>
         <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polyline points="9 18 15 12 9 6"></polyline>
@@ -513,7 +565,7 @@
       </a>
 
       <!-- X / Twitter Link -->
-      <a href="https://x.com/jawadur_rafid" id="link-x" class="link-card" target="_blank" rel="noopener noreferrer">
+      <a href="https://x.com/jawadur_rafid" id="link-x" class="link-card card-x" target="_blank" rel="noopener noreferrer">
         <div class="link-left">
           <span class="link-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -521,6 +573,36 @@
             </svg>
           </span>
           <span class="link-title">X / Twitter</span>
+        </div>
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+
+      <!-- Threads Link -->
+      <a href="https://www.threads.net/@jawadur_rafid" id="link-threads" class="link-card card-threads" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <span class="link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21.186 10.876c-.234-4.368-2.616-7.308-6.66-7.308-4.224 0-7.08 3.168-7.08 7.788 0 4.38 2.688 7.428 6.9 7.428 2.292 0 4.104-.636 5.376-1.884l1.632 1.344c-1.848 1.836-4.476 2.628-7.08 2.628-5.364 0-9.252-3.864-9.252-9.516 0-5.916 4.344-9.984 9.684-9.984 5.34 0 8.784 3.732 9.072 9.12.084 1.584-.048 2.976-.384 4.104-.576 1.956-1.92 3.036-3.84 3.036-1.572 0-2.64-.816-2.928-2.22-.924.96-2.196 1.488-3.708 1.488-2.208 0-4.044-1.632-4.044-4.296 0-2.88 2.052-4.524 4.416-4.524 1.452 0 2.676.624 3.324 1.704v-1.14h2.244v6.864c0 .888.396 1.296.96 1.296.888 0 1.632-.768 1.956-2.268.252-1.128.324-2.316.228-3.732zm-6.288 1.992c0-1.128-.732-1.884-1.74-1.884-1.032 0-1.74.78-1.74 1.884 0 1.104.708 1.896 1.74 1.896 1.008 0 1.74-.792 1.74-1.896z"/>
+              </svg>
+            </span>
+            <span class="link-title">Threads</span>
+          </div>
+          <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+
+      <!-- Telegram Link -->
+      <a href="https://t.me/mjrafid" id="link-telegram" class="link-card card-telegram" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <span class="link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.87 4.326-2.962-.924c-.643-.204-.658-.643.136-.953l11.57-4.46c.538-.196 1.006.128.832.953z"/>
+            </svg>
+          </span>
+          <span class="link-title">Telegram</span>
         </div>
         <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polyline points="9 18 15 12 9 6"></polyline>
