@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F0F15" />
+      <stop offset="50%" stop-color="#08080B" />
+      <stop offset="100%" stop-color="#020205" />
+    </linearGradient>
+    
+    <!-- Text / Accent Gradient -->
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" /> <!-- Violet -->
+      <stop offset="50%" stop-color="#3B82F6" /> <!-- Blue Accent -->
+      <stop offset="100%" stop-color="#10B981" /> <!-- Emerald -->
+    </linearGradient>
+
+    <!-- Subtle Drop Shadow / Glow for Monogram -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer Squircle Container -->
+  <rect width="32" height="32" rx="10" fill="url(#bgGrad)" />
+
+  <!-- Gorgeous Border Accent (Outer Glow Effect) -->
+  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="9.25" fill="none" stroke="url(#glowGrad)" stroke-width="1.2" opacity="0.85" />
+  
+  <!-- Sleek Inner Border -->
+  <rect x="2" y="2" width="28" height="28" rx="8" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="0.75" />
+
+  <!-- Monogram Text with custom spacing and glow -->
+  <text x="16.5" y="21.5" 
+        font-family="system-ui, -apple-system, 'Outfit', 'Inter', sans-serif" 
+        font-size="14.5" 
+        font-weight="900" 
+        fill="url(#glowGrad)" 
+        text-anchor="middle" 
+        letter-spacing="-0.04em"
+        filter="url(#glow)">JR</text>
+</svg>
