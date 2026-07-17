@@ -282,6 +282,24 @@
       color: #007AFF;
     }
 
+    .link-card.card-projects:hover {
+      border-color: rgba(168, 85, 247, 0.35);
+      background-color: rgba(168, 85, 247, 0.025);
+      box-shadow: 0 6px 20px rgba(168, 85, 247, 0.1), 0 0 1px rgba(168, 85, 247, 0.2) inset;
+    }
+    .link-card.card-projects:hover .link-icon {
+      color: #A855F7;
+    }
+
+    .link-card.card-share:hover {
+      border-color: rgba(14, 165, 233, 0.35);
+      background-color: rgba(14, 165, 233, 0.025);
+      box-shadow: 0 6px 20px rgba(14, 165, 233, 0.1), 0 0 1px rgba(14, 165, 233, 0.2) inset;
+    }
+    .link-card.card-share:hover .link-icon {
+      color: #0EA5E9;
+    }
+
     .link-card.card-linkedin:hover {
       border-color: rgba(10, 102, 194, 0.35);
       background-color: rgba(10, 102, 194, 0.025);
@@ -489,8 +507,42 @@
         </svg>
       </a>
 
+      <!-- Projects -->
+      <a href="https://projects.jawadurrafid.com/" id="link-projects" class="link-card card-projects" target="_blank" rel="noopener noreferrer" aria-label="View all projects" style="--delay: 0.08s">
+        <div class="link-left">
+          <span class="link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 7l9-4 9 4v10l-9 4-9-4V7z"></path>
+              <path d="M3 7l9 4 9-4"></path>
+              <path d="M12 11v10"></path>
+            </svg>
+          </span>
+          <span class="link-title">Projects</span>
+        </div>
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+
+      <!-- Share -->
+      <a href="https://share.jawadurrafid.com/" id="link-share" class="link-card card-share" target="_blank" rel="noopener noreferrer" aria-label="Share files with me" style="--delay: 0.12s">
+        <div class="link-left">
+          <span class="link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"></path>
+              <path d="M16 6l-4-4-4 4"></path>
+              <path d="M12 2v14"></path>
+            </svg>
+          </span>
+          <span class="link-title">Share Files</span>
+        </div>
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+
       <!-- LinkedIn -->
-      <a href="https://linkedin.com/in/jawadurrafid/" id="link-linkedin" class="link-card card-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile" style="--delay: 0.08s">
+      <a href="https://linkedin.com/in/jawadurrafid/" id="link-linkedin" class="link-card card-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile" style="--delay: 0.16s">
         <div class="link-left">
           <span class="link-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -505,7 +557,7 @@
       </a>
 
       <!-- GitHub -->
-      <a href="https://github.com/jawadur13" id="link-github" class="link-card card-github" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile" style="--delay: 0.12s">
+      <a href="https://github.com/jawadur13" id="link-github" class="link-card card-github" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile" style="--delay: 0.20s">
         <div class="link-left">
           <span class="link-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -520,7 +572,7 @@
       </a>
 
       <!-- Kaggle -->
-      <a href="https://www.kaggle.com/jawadurrafid/" id="link-kaggle" class="link-card card-kaggle" target="_blank" rel="noopener noreferrer" aria-label="Visit Kaggle profile" style="--delay: 0.16s">
+      <a href="https://www.kaggle.com/jawadurrafid/" id="link-kaggle" class="link-card card-kaggle" target="_blank" rel="noopener noreferrer" aria-label="Visit Kaggle profile" style="--delay: 0.24s">
         <div class="link-left">
           <span class="link-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -535,7 +587,7 @@
       </a>
 
       <!-- Business Email -->
-      <a href="mailto:contact@jawadurrafid.com" id="link-email-business" class="link-card card-email" rel="noopener noreferrer" aria-label="Send business email" style="--delay: 0.20s">
+      <a href="mailto:contact@jawadurrafid.com" id="link-email-business" class="link-card card-email" rel="noopener noreferrer" aria-label="Send business email" style="--delay: 0.28s">
         <div class="link-left">
           <span class="link-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -552,7 +604,7 @@
       <div class="section-label">CONTACT</div>
 
       <!-- Personal Email -->
-      <a href="mailto:jawadurrafidrafid@gmail.com" id="link-email-personal" class="link-card card-email" rel="noopener noreferrer" aria-label="Send personal email" style="--delay: 0.24s">
+      <a href="mailto:jawadurrafidrafid@gmail.com" id="link-email-personal" class="link-card card-email" rel="noopener noreferrer" aria-label="Send personal email" style="--delay: 0.32s">
         <div class="link-left">
           <span class="link-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -567,7 +619,7 @@
       </a>
 
       <!-- Backup Email -->
-      <a href="mailto:rafidjawadur@gmail.com" id="link-email-backup" class="link-card card-email" rel="noopener noreferrer" aria-label="Send backup email" style="--delay: 0.28s">
+      <a href="mailto:rafidjawadur@gmail.com" id="link-email-backup" class="link-card card-email" rel="noopener noreferrer" aria-label="Send backup email" style="--delay: 0.36s">
         <div class="link-left">
           <span class="link-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -582,7 +634,7 @@
       </a>
 
       <!-- WhatsApp -->
-      <a href="https://wa.me/8801824844522" id="link-whatsapp" class="link-card card-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" style="--delay: 0.32s">
+      <a href="https://wa.me/8801824844522" id="link-whatsapp" class="link-card card-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" style="--delay: 0.40s">
         <div class="link-left">
           <span class="link-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -597,7 +649,7 @@
       </a>
 
       <!-- Telegram -->
-      <a href="https://t.me/mjrafid" id="link-telegram" class="link-card card-telegram" target="_blank" rel="noopener noreferrer" aria-label="Message on Telegram" style="--delay: 0.36s">
+      <a href="https://t.me/mjrafid" id="link-telegram" class="link-card card-telegram" target="_blank" rel="noopener noreferrer" aria-label="Message on Telegram" style="--delay: 0.44s">
         <div class="link-left">
           <span class="link-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -614,7 +666,7 @@
       <div class="section-label">SOCIAL</div>
 
       <!-- Facebook -->
-      <a href="https://www.facebook.com/jawadur.rafid" id="link-facebook" class="link-card card-facebook" target="_blank" rel="noopener noreferrer" aria-label="Visit Facebook profile" style="--delay: 0.40s">
+      <a href="https://www.facebook.com/jawadur.rafid" id="link-facebook" class="link-card card-facebook" target="_blank" rel="noopener noreferrer" aria-label="Visit Facebook profile" style="--delay: 0.48s">
         <div class="link-left">
           <span class="link-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -629,7 +681,7 @@
       </a>
 
       <!-- Instagram -->
-      <a href="https://www.instagram.com/jawadur_rafid/" id="link-instagram" class="link-card card-instagram" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram profile" style="--delay: 0.44s">
+      <a href="https://www.instagram.com/jawadur_rafid/" id="link-instagram" class="link-card card-instagram" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram profile" style="--delay: 0.52s">
         <div class="link-left">
           <span class="link-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -644,7 +696,7 @@
       </a>
 
       <!-- X / Twitter -->
-      <a href="https://x.com/jawadur_rafid" id="link-x" class="link-card card-x" target="_blank" rel="noopener noreferrer" aria-label="Visit X profile" style="--delay: 0.48s">
+      <a href="https://x.com/jawadur_rafid" id="link-x" class="link-card card-x" target="_blank" rel="noopener noreferrer" aria-label="Visit X profile" style="--delay: 0.56s">
         <div class="link-left">
           <span class="link-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -659,7 +711,7 @@
       </a>
 
       <!-- Threads -->
-      <a href="https://www.threads.net/@jawadur_rafid" id="link-threads" class="link-card card-threads" target="_blank" rel="noopener noreferrer" aria-label="Visit Threads profile" style="--delay: 0.52s">
+      <a href="https://www.threads.net/@jawadur_rafid" id="link-threads" class="link-card card-threads" target="_blank" rel="noopener noreferrer" aria-label="Visit Threads profile" style="--delay: 0.60s">
         <div class="link-left">
           <span class="link-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -674,7 +726,7 @@
       </a>
 
       <!-- Discord -->
-      <a href="https://discord.com/users/jawadur_rafid" id="link-discord" class="link-card card-discord" target="_blank" rel="noopener noreferrer" aria-label="Join Discord server" style="--delay: 0.56s">
+      <a href="https://discord.com/users/jawadur_rafid" id="link-discord" class="link-card card-discord" target="_blank" rel="noopener noreferrer" aria-label="Join Discord server" style="--delay: 0.64s">
         <div class="link-left">
           <span class="link-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor">
