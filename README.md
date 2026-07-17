@@ -28,6 +28,8 @@ Built as a single static HTML file with no build step, framework, or dependencie
 ├── profile.png     # Profile photo shown in the header
 ├── favicon.svg     # Custom site icon
 ├── CNAME           # Custom domain for GitHub Pages (connect.jawadurrafid.com)
+├── robots.txt      # Search-engine crawling rules
+├── sitemap.xml     # XML sitemap for search indexing
 └── README.md       # This file
 ```
 
@@ -69,7 +71,12 @@ To deploy on GitHub Pages (or any static host such as Netlify, Vercel, Cloudflar
 3. The `CNAME` file automatically binds the custom domain.
 4. Add/verify the domain's DNS records as instructed by GitHub.
 
-> Any static file host works — just upload `index.html`, `profile.png`, `favicon.svg`, and `CNAME`.
+> Any static file host works — just upload `index.html`, `profile.png`, `favicon.svg`, `CNAME`, `robots.txt`, and `sitemap.xml`.
+
+### SEO & indexing files
+
+- **`robots.txt`** — allows all crawlers and points them to the sitemap.
+- **`sitemap.xml`** — a single-entry XML sitemap listing the root URL (`https://connect.jawadurrafid.com/`) for search engines. Update the `<loc>` and `<lastmod>` whenever the page content changes.
 
 ---
 
