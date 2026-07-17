@@ -401,6 +401,29 @@
       user-select: none;
     }
 
+    .footer-copy {
+      margin-top: 6px;
+      font-size: 0.68rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      opacity: 0.4;
+      user-select: none;
+    }
+
+    /* Respect users who prefer reduced motion: show content immediately */
+    @media (prefers-reduced-motion: reduce) {
+      .container,
+      .link-card,
+      footer {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .link-card {
+        transition: none !important;
+      }
+    }
+
     /* Mobile Responsive Settings */
     @media (max-width: 480px) {
       body {
@@ -669,6 +692,7 @@
     <!-- Footer -->
     <footer>
       <div class="footer-text">connect.jawadurrafid.com</div>
+      <div class="footer-copy">&copy; <span id="year">2026</span> Md. Jawadur Rafid. All rights reserved.</div>
     </footer>
   </div>
 
@@ -686,6 +710,9 @@
         card.style.setProperty('--y', `${y}px`);
       });
     });
+
+    // Keep the footer copyright year current
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
